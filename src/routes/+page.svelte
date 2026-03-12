@@ -1,7 +1,8 @@
 <script>
-	import { Heading, P, Card, Button } from 'flowbite-svelte';
+	// import { Heading, P, Card, Button } from 'flowbite-svelte';
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 	let vCard = false;
+	
 </script>
 
 <div class="mx-8 flex h-screen pb-8">
@@ -19,7 +20,7 @@
 <div class="mt-10 grid h-screen grid-cols-3 content-center gap-2">
 	<div class="bg-sky-100/75 hover:bg-sky-500 h-96">
 		<div class="m-6">
-			<p class="h-32 mb-2 text-[36pt] font-bold tracking-tight text-gray-900 dark:text-white">
+			<p class="h-32 mb-2 text-[32pt] font-bold tracking-tight text-gray-900 dark:text-white">
 				LESSON PLAN
       </p>
 			<p class="mb-3 leading-tight font-normal text-gray-700 dark:text-gray-400">
@@ -33,7 +34,7 @@
 
   <div class="bg-sky-100/75 hover:bg-sky-500 h-96">
 		<div class="m-6">
-			<p class="h-32 mb-2 text-[36pt] font-bold tracking-tight text-gray-900 dark:text-white">
+			<p class="h-32 mb-2 text-[32pt] font-bold tracking-tight text-gray-900 dark:text-white">
 				WEBSITE GUIDELINE
       </p>
 			<p class="mb-3 leading-tight font-normal text-gray-700 dark:text-gray-400">
@@ -47,7 +48,7 @@
 
   <div class="bg-sky-100/75 hover:bg-sky-500 h-96">
 		<div class="m-6">
-			<p class="h-32 mb-2 text-[36pt] font-bold tracking-tight text-gray-900 dark:text-white">
+			<p class="h-32 mb-2 text-[32pt] font-bold tracking-tight text-gray-900 dark:text-white">
 				DEVELOPER & CONTACT
       </p>
 			<p class="mb-3 leading-tight font-normal text-gray-700 dark:text-gray-400">
@@ -67,8 +68,8 @@
 	<div class="col-start-3 row-start-3">Rightmost</div>
 </div>
 
-<div class="mx-auto mt-10 h-screen flex justify-center">
-	<div class="my-auto text-center">
+<div class="mx-auto mt-10 h-screen flex flex-col justify-center">
+	<div class="text-center">
 		<p>Pelajari lebih lanjut tentang rekrutmen berbasis keberlanjutan</p>
 		<button class="mt-4 cursor-pointer rounded-[30px] bg-primary-50 py-4 px-8 text-white">Selengkapnya..</button>
 	</div>

@@ -1,6 +1,10 @@
-<div class="p-4 mx-auto">
-    <h3 class="">Learning Module Title</h3>
-    <div>Module discription</div>
+<script>
+    let { data } = $props();
+</script>
+
+<div class="w-3/4 p-4 mx-auto">
+    <h3 class="">{data.data.title}</h3>
+    <div>{data.data.description}</div>
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-8">
         <div class="col-span-2 w-full aspect-[16/9] border border-solid border-gray">
             <iframe class="" src="" frameborder="1" title="Test" name="test-01"></iframe>

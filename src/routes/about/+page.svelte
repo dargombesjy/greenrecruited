@@ -1,3 +1,7 @@
+<script>
+	import Footer from "$lib/Footer.svelte";
+</script>
+
 <div class="mx-auto grid w-3/4 grid-cols-2 gap-2 content-center p-10 text-center">
 	<!-- <div class="w-full col-span-2"> -->
 	<img class="col-span-2 w-full" src="/images/toyota_yaris.jpg" alt="" />
@@ -15,3 +19,5 @@
 	<img class="h-80 w-full" src="/images/peugeot_9x8.jpg" alt="" />
 	<!-- </div> -->
 </div>
+
+<Footer />
