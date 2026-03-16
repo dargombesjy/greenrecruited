@@ -1,0 +1,1 @@
+const e="https://greenrecruited.web.id:9443/api";export{e as P};
