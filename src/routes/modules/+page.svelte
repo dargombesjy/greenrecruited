@@ -1,4 +1,5 @@
 <script>
+    import { PUBLIC_STRAPI_URL } from "$env/static/public";
     let { data } = $props();
 </script>
 
@@ -11,10 +12,10 @@
         <div class="bg-white overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 relative">
             <a href="/modules/{item.documentId}" class="block" aria-label="product-wrapper">
                 <div class="w-full aspect-[8/6] p-3">
-                    <img src="http://localhost:1337{item.image.url}" alt="" class="w-full h-full object-contain">
+                    <img src="{PUBLIC_STRAPI_URL}{item.image.url}" alt="" class="w-full h-full object-contain">
                 </div>
                 <div class="p-6">
-                    <hr class="border border-gray-300 mb-6" />
+                    <hr class="border border-gray-300 mb-6" />P}{item.image.url}" a
                     <div>
                         <h4>{item.title}</h4>
                         <h4>{item.description}</h4>
@@ -23,35 +24,5 @@
             </a>
         </div>
         {/each}
-
-        <!-- <div class="bg-white overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 relative">
-            <a href="javascript:void(0)" class="block" aria-label="product-wrapper">
-                <div class="w-full aspect-[8/6] p-3">
-                    <img src="" alt="" class="w-full h-full object-contain">
-                </div>
-                <div class="p-6">
-                    <hr class="border border-gray-300 mb-6" />
-                    <div>
-                        <h4>Introduction to Recruitment</h4>
-                        <h4>2nd line</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="bg-white overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 relative">
-            <a href="javascript:void(0)" class="block" aria-label="product-wrapper">
-                <div class="w-full aspect-[8/6] p-3">
-                    <img src="" alt="" class="w-full h-full object-contain">
-                </div>
-                <div class="p-6">
-                    <hr class="border border-gray-300 mb-6" />
-                    <div>
-                        <h4>Introduction to Recruitment</h4>
-                        <h4>2nd line</h4>
-                    </div>
-                </div>
-            </a>
-        </div> -->
     </div>
 </div>
