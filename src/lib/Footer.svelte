@@ -23,15 +23,15 @@
 		<ul class="text-gray-900 dark:text-gray-200">
 			
 			<li class="me-4 mb-0 last:me-0 md:me-6">
-				<a href="/" class="hover:underline">LEARNING MODULES<!----></a>
+				<a href="/modules" class="hover:underline">LEARNING MODULES<!----></a>
 			</li>
 			
 			<li class="me-4 mb-0 last:me-0 md:me-6">
-				<a href="/" class="hover:underline">REFLECTION<!----></a>
+				<a href="/reflection" class="hover:underline">REFLECTION<!----></a>
 			</li>
 			
 			<li class="me-4 mb-0 last:me-0 md:me-6">
-				<a href="/" class="hover:underline">SIMULATION<!----></a>
+				<a href="/simulation" class="hover:underline">SIMULATION<!----></a>
 			</li>
 			
 		</ul>

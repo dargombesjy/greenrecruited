@@ -1,0 +1,1 @@
+import{a,f as p}from"../chunks/DhWUWA4W.js";import"../chunks/BfIso7-u.js";import{s as t,f as m}from"../chunks/DFf5R0V2.js";import{F as d}from"../chunks/BMuxfqkX.js";var s=p('<div class="w-3/4 mx-auto"><div><p>VIDEO</p></div> <div><p>ARTIKEL</p></div> <div><p>BERITA</p></div></div> <!>',1);function c(i){var o=s(),r=t(m(o),2);d(r),a(i,o)}export{c as component};

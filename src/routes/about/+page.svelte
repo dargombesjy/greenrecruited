@@ -1,23 +1,44 @@
 <script>
-	import Footer from "$lib/Footer.svelte";
+	import { PUBLIC_STRAPI_URL } from '$env/static/public';
+	import Footer from '$lib/Footer.svelte';
+	let { data } = $props();
 </script>
 
-<div class="mx-auto grid w-3/4 grid-cols-2 gap-2 content-center p-10 text-center">
-	<!-- <div class="w-full col-span-2"> -->
-	<img class="col-span-2 w-full" src="/images/toyota_yaris.jpg" alt="" />
-	<!-- </div> -->
-	<!-- <div class="w-full"> -->
-	<img class="h-80 w-full object-fill" src="/images/audi_r8.jpg" alt="" />
-	<!-- </div> -->
-	<!-- <div class="w-full"> -->
-	<img class="h-80 w-full object-fill" src="/images/bmw_m3.jpg" alt="" />
-	<!-- </div> -->
-	<!-- <div class="w-full"> -->
-	<img class="h-80 w-full" src="/images/porsche_963.jpeg" alt="" />
-	<!-- </div> -->
-	<!-- <div class="w-full"> -->
-	<img class="h-80 w-full" src="/images/peugeot_9x8.jpg" alt="" />
-	<!-- </div> -->
+<div></div>
+<div class="p10 mx-auto my-8 w-3/4">
+	<div class="relative -z-10 w-full flex-none">
+		<img class="object-fill" src="{PUBLIC_STRAPI_URL}{data.data.main_image.url}" alt="" />
+		<div class="absolute top-[75%] px-8 text-4xl font-bold text-white">{data.data.title}</div>
+	</div>
+	{#each data.data.about_items as item, idx}
+		{#if idx % 2 == 0}
+			<div class="flex w-full">
+				<div class="w-1/2">
+					<img class="h-96 object-fill" src="{PUBLIC_STRAPI_URL}{item.image.url}" alt="" />
+				</div>
+				<div class="flex w-1/2 flex-col pr-4 pl-8">
+					<p class="h-1/3 content-center text-3xl font-bold">{item.title}</p>
+					<div class="h-1/3">
+						<span>{item.description}</span>
+					</div>
+					<button class="mx-10 mt-2 rounded-3xl bg-primary-50 p-2 text-white">{item.button_text}</button>
+				</div>
+			</div>
+		{:else}
+			<div class="flex w-full">
+				<div class="flex w-1/2 flex-col pr-4 pl-8">
+					<p class="h-1/3 content-center text-3xl font-bold">{item.title}</p>
+					<div class="h-1/3">
+						<span>{item.description}</span>
+					</div>
+					<button class="mx-10 mt-2 rounded-3xl bg-primary-50 p-2 text-white">{item.button_text}</button>
+				</div>
+				<div class="w-1/2">
+					<img class="h-96 object-fill" src="{PUBLIC_STRAPI_URL}{item.image.url}" alt="" />
+				</div>
+			</div>
+		{/if}
+	{/each}
 </div>
 
 <Footer />
