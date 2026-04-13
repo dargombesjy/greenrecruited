@@ -15,7 +15,7 @@
 			<p class="text-[24pt]">Sustainability Reflection Forum</p>
 			<div>
 				<span
-					>Gunakan forum inin untuk menuliskan pandangan, pengalaman, dan pemikiran Anda terkait isu
+					>Gunakan forum ini untuk menuliskan pandangan, pengalaman, dan pemikiran Anda terkait isu
 					keberlanjutan dalam rekrutmen
 				</span>
 			</div>
