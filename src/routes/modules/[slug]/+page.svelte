@@ -1,15 +1,20 @@
 <script>
+    import { BlocksRenderer } from "blocks-svelte-renderer";
+    import { marked } from "marked";
     let { data } = $props();
 </script>
 
 <div class="w-3/4 p-4 mx-auto">
     <h3 class="">{data.data.title}</h3>
-    <div>{data.data.description}</div>
+    <!-- <div>{data.data.description}</div> -->
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-8">
-        <div class="col-span-2 w-full aspect-[16/9] border border-solid border-gray">
-            <iframe class="" src="" frameborder="1" title="Test" name="test-01"></iframe>
+        <!-- <div class="col-span-3 w-full aspect-[16/9] border border-solid border-gray"> -->
+        <div class="col-span-3 w-full aspect-[16/9] overflow-y-scroll">
+            <BlocksRenderer content={data.data.long_text} />
+             <!-- {@html marked(data.data.long_description)} -->
+            <!-- <iframe class="" src="" frameborder="1" title="Test" name="test-01"></iframe> -->
         </div>
-        <div class="col-span-2 w-full">
+        <div class="col-span-1 w-full">
             <a href="/test" class="block px-10 py-2 text-[20pt]">TUJUAN PEMBELAJARAN</a>
             <a href="/test" class="block px-10 py-2 text-[20pt]">VIDEO</a>
             <a href="/test" class="block px-10 py-2 text-[20pt]">GALI LEBIH DALAM</a>

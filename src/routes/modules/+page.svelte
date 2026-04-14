@@ -18,7 +18,7 @@
                     <hr class="border border-gray-300 mb-6" />
                     <div>
                         <h4>{item.title}</h4>
-                        <h4>{item.description}</h4>
+                        <!-- <h4>{item.description}</h4> -->
                     </div>
                 </div>
             </a>
