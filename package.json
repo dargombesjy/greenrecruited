@@ -31,7 +31,6 @@
 		"vite": "^7.3.1"
 	},
 	"dependencies": {
-		"blocks-svelte-renderer": "^1.0.1",
-		"marked": "^18.0.0"
+		"blocks-svelte-renderer": "^1.0.1"
 	}
 }

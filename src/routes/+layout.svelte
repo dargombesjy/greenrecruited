@@ -20,6 +20,7 @@
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
 <div class="">
+	
 	<div class="sticky inset-0 p-1 bg-primary-300">
 		<Navbar />
 	</div>
@@ -60,5 +61,13 @@
 <style>
 	:global(body) {
 		min-height: 100vh;
+	}
+	.bg-img {
+		position: absolute;
+    	height: 100%;
+    	width: 100%;
+    	top: 0;
+    	background-image: url("https://st3.depositphotos.com/4478807/19082/i/450/depositphotos_190824428-stock-photo-white-geometric-hexagonal-abstract-background.jpg");
+    	z-index: -1;
 	}
 </style>

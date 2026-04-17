@@ -43,4 +43,22 @@
   h3 {
     font-size: 28pt;
   }
+
+  ol, ul {
+    padding-left: 0.5em;
+  }
+
+  ol li {
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin-left: 1.5em;
+    margin-bottom: 8px;
+  }
+
+  ul li {
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin-left: 1.5em;
+    margin-bottom: 4px;
+  }
 }

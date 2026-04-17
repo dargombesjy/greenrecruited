@@ -1,7 +1,13 @@
 <script>
     import { BlocksRenderer } from "blocks-svelte-renderer";
-    import { marked } from "marked";
+    let { menu } = $state("longtext");
     let { data } = $props();
+
+    function handleAssign(par) {
+        menu = par;
+    }
+
+    menu = "video";
 </script>
 
 <div class="w-3/4 p-4 mx-auto">
@@ -10,16 +16,40 @@
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-8">
         <!-- <div class="col-span-3 w-full aspect-[16/9] border border-solid border-gray"> -->
         <div class="col-span-3 w-full aspect-[16/9] overflow-y-scroll">
-            <BlocksRenderer content={data.data.long_text} />
-             <!-- {@html marked(data.data.long_description)} -->
-            <!-- <iframe class="" src="" frameborder="1" title="Test" name="test-01"></iframe> -->
+            {#if menu == "longtext"}
+                <BlocksRenderer content={data.data.long_text} />
+            {:else if menu == "video"}
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/{data.data.video_id}" frameborder="0"
+                    title="Test" name="test-01"
+                ></iframe>
+            {:else if menu == "deepdive"}
+                <BlocksRenderer content={data.data.deep_dive} />
+            {/if}
         </div>
         <div class="col-span-1 w-full">
-            <a href="/test" class="block px-10 py-2 text-[20pt]">TUJUAN PEMBELAJARAN</a>
-            <a href="/test" class="block px-10 py-2 text-[20pt]">VIDEO</a>
-            <a href="/test" class="block px-10 py-2 text-[20pt]">GALI LEBIH DALAM</a>
+            <button class="block px-10 py-2 text-[20pt] cursor-pointer text-left"
+                onclick={() => handleAssign("longtext")}>
+                TUJUAN PEMBELAJARAN
+            </button>
+            <button class="block px-10 py-2 text-[20pt] cursor-pointer text-left"
+                onclick={() => handleAssign("video") }>
+                VIDEO
+            </button>
+            <button class="block px-10 py-2 text-[20pt] cursor-pointer text-left"
+                onclick={() => handleAssign("deepdive") }>
+                GALI LEBIH DALAM
+            </button>
+            <button class="block px-10 py-2 text-[20pt] cursor-pointer text-left"
+                onclick={() => handleAssign("evaluasi") }>
+                EVALUASI
+            </button>
+            <button class="block px-10 py-2 text-[20pt] cursor-pointer text-left"
+                onclick={() => handleAssign("refleksi") }>
+                REFLEKSI
+            </button>
+            <!-- <a href="/test" class="block px-10 py-2 text-[20pt]">GALI LEBIH DALAM</a>
             <a href="/test" class="block px-10 py-2 text-[20pt]">EVALUASI</a>
-            <a href="/test" class="block px-10 py-2 text-[20pt]">REFLEKSI</a>
+            <a href="/test" class="block px-10 py-2 text-[20pt]">REFLEKSI</a> -->
         </div>
         <div class="bg-white overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 relative">
             <a href="javascript:void(0)" class="block" aria-label="product-wrapper">
