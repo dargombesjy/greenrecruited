@@ -5,7 +5,7 @@
 
 
 <div class="w-3/4 p-4 mx-auto">
-    <div>Header and filter</div>
+    <!-- <div>Header and filter</div> -->
     
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
         {#each data.data as item}

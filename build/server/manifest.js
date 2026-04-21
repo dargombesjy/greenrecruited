@@ -10,18 +10,19 @@ return {
 	assets: new Set(["images/audi_r8.jpg","images/bmw_m3.jpg","images/citroen_c3.jpg","images/ian-van-landuyt-H7CzZwBVn7k-unsplash.jpg","images/logo.svg","images/peugeot_9x8.jpg","images/porsche_963.jpeg","images/renault_clio.jpg","images/toyota_yaris.jpg","robots.txt"]),
 	mimeTypes: {".jpg":"image/jpeg",".svg":"image/svg+xml",".jpeg":"image/jpeg",".txt":"text/plain"},
 	_: {
-		client: {start:"_app/immutable/entry/start.BegXhzO9.js",app:"_app/immutable/entry/app.21qKM7z9.js",imports:["_app/immutable/entry/start.BegXhzO9.js","_app/immutable/chunks/w33NaMN1.js","_app/immutable/chunks/Cu36jJJw.js","_app/immutable/chunks/J2o4EdQh.js","_app/immutable/entry/app.21qKM7z9.js","_app/immutable/chunks/Cu36jJJw.js","_app/immutable/chunks/D8lH8Vpo.js","_app/immutable/chunks/7q210hqz.js","_app/immutable/chunks/FL3hJHCL.js","_app/immutable/chunks/J2o4EdQh.js","_app/immutable/chunks/7r8TxmC0.js","_app/immutable/chunks/Dm61nVNf.js","_app/immutable/chunks/BFg_CinH.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.BLu5kbgF.js",app:"_app/immutable/entry/app.CR09F53k.js",imports:["_app/immutable/entry/start.BLu5kbgF.js","_app/immutable/chunks/CNEbXpnP.js","_app/immutable/chunks/BqEozBxR.js","_app/immutable/chunks/BeYIQxCt.js","_app/immutable/entry/app.CR09F53k.js","_app/immutable/chunks/BqEozBxR.js","_app/immutable/chunks/OnCvNs-_.js","_app/immutable/chunks/4PD2n0KE.js","_app/immutable/chunks/CZHfX3Sd.js","_app/immutable/chunks/BeYIQxCt.js","_app/immutable/chunks/DeVGZwmz.js","_app/immutable/chunks/BflWvBoa.js","_app/immutable/chunks/CYK0e6Q3.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
-			__memo(() => import('./chunks/0-KLGR81rz.js')),
-			__memo(() => import('./chunks/1-Cmri_Uub.js')),
-			__memo(() => import('./chunks/2-gbTml79y.js')),
-			__memo(() => import('./chunks/3-DH3-fKpJ.js')),
-			__memo(() => import('./chunks/4-BKErC64s.js')),
-			__memo(() => import('./chunks/5-B64EaFCn.js')),
-			__memo(() => import('./chunks/6-Bd0lZrxb.js')),
-			__memo(() => import('./chunks/7-akP6mkvQ.js')),
-			__memo(() => import('./chunks/8-_6ifwUt7.js')),
-			__memo(() => import('./chunks/9-lDSrQqKs.js'))
+			__memo(() => import('./chunks/0-BQwUotXS.js')),
+			__memo(() => import('./chunks/1-DggdoApn.js')),
+			__memo(() => import('./chunks/2-DOCgSGyr.js')),
+			__memo(() => import('./chunks/3-Bb_bN8cW.js')),
+			__memo(() => import('./chunks/4-rYpyD-ZE.js')),
+			__memo(() => import('./chunks/5-ZjAWhjnW.js')),
+			__memo(() => import('./chunks/6-DtDlkW2P.js')),
+			__memo(() => import('./chunks/7-DBRmsWcC.js')),
+			__memo(() => import('./chunks/8-BrLsao_C.js')),
+			__memo(() => import('./chunks/9-CvG7o_JL.js')),
+			__memo(() => import('./chunks/10-Bwm7O3na.js'))
 		],
 		remotes: {
 			
@@ -70,10 +71,17 @@ return {
 				endpoint: null
 			},
 			{
-				id: "/simulation",
-				pattern: /^\/simulation\/?$/,
+				id: "/simulations",
+				pattern: /^\/simulations\/?$/,
 				params: [],
 				page: { layouts: [0,], errors: [1,], leaf: 9 },
+				endpoint: null
+			},
+			{
+				id: "/simulations/[slug]",
+				pattern: /^\/simulations\/([^/]+?)\/?$/,
+				params: [{"name":"slug","optional":false,"rest":false,"chained":false}],
+				page: { layouts: [0,], errors: [1,], leaf: 10 },
 				endpoint: null
 			}
 		],

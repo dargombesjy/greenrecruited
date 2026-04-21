@@ -34,7 +34,7 @@
 			</button>
 
 			<div class="hidden w-full md:block md:w-auto">
-				<ul class="mt-0 flex flex-col p-4 md:flex-row md:text-base md:font-medium rtl:space-x-reverse bg-primary-50 rounded-4xl">
+				<ul class="list-none mt-0 flex flex-col p-4 md:flex-row md:text-base md:font-medium rtl:space-x-reverse bg-primary-50 rounded-4xl">
 					<li>
 						<a
 							href="/about"
@@ -72,7 +72,7 @@
 
 					<li>
 						<a
-							href="/simulation"
+							href="/simulations"
 							class="block rounded-sm py-2 ps-3 pe-4 text-white hover:bg-gray-100 hover:text-primary-500 md:border-0 md:p-2 md:hover:bg-transparent md:hover:text-primary-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:md:text-gray-400 md:dark:hover:bg-transparent md:dark:hover:text-white"
 						>
 							Simulation
@@ -83,7 +83,7 @@
             
 			<div class="hidden w-full md:block md:w-auto">
 				<ul
-					class="mt-0 flex flex-col p-4 md:flex-row md:text-sm md:font-medium rtl:space-x-reverse"
+					class="list-none mt-0 flex flex-col p-4 md:flex-row md:text-sm md:font-medium rtl:space-x-reverse"
 				>
 					<li>
 						<a
