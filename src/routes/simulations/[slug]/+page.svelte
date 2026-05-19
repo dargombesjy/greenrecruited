@@ -2,20 +2,28 @@
 	import { PUBLIC_STRAPI_URL } from '$env/static/public';
 	import { goto } from '$app/navigation';
 	import { BlocksRenderer } from 'blocks-svelte-renderer';
+	import { setContext } from 'svelte';
 
 	let { data } = $props();
-	let choicepar = $state({
-		next_node: 'cari_jalan_01'
-	});
+	// let choicepar = $state({
+	// 	next_node: ''
+	// });
+	let next_node = $state('');
+	let parent_node = $state('');
+
+	setContext('next_node', () => data.data[0].parent );
 
 	const slugify = (str = '') => str.toLowerCase().replace(/ /g, '-').replace(/\./g, '');
 	function updateChoice(par) {
-		choicepar.next_node = par;
+		// choicepar.next_node = par;
+		next_node = par.next_node;
 	}
 	function gotoChoice() {
-		let dest = '/simulations/' + choicepar.next_node;
+		// let dest = '/simulations/' + choicepar.next_node;
+		let dest = '/simulations/' + next_node;
 		goto(dest);
-		choicepar.next_node = 'cari_jalan_01';
+		// choicepar.next_node = 'cari_jalan_01';
+		// next_node = 'cari_jalan_01';
 	}
 </script>
 
@@ -37,7 +45,7 @@
 		{#each data.data[0].choices as path}
 			<div class="flex gap-2">
 				<input
-					onclick={() => updateChoice(path.next_node)}
+					onclick={() => updateChoice(path)}
 					id={slugify(path.choice_name)}
 					type="radio"
 					name="choices"
@@ -53,7 +61,7 @@
 		class="mt-4 w-48 cursor-pointer self-center rounded-[20px] bg-primary-50 py-4 text-center text-white"
 		onclick={() => gotoChoice()}
 	>
-		{#if choicepar.next_node == 'cari_jalan_01'}
+		{#if next_node == 'cari_jalan_01'}
 			Reset
 		{:else}
 			Submit
