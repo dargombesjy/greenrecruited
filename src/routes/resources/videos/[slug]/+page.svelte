@@ -1,0 +1,21 @@
+<script>
+	import { BlocksRenderer } from 'blocks-svelte-renderer';
+	let { data } = $props();
+</script>
+
+<div class="mx-auto px-10 w-3/4 p-4">
+	<div class="h-48">
+		<div class="aspect-[16/9] w-full">
+			<iframe
+				class="h-full w-full"
+				src="https://youtube.com/embed/{data.data[0].video_id}"
+				frameborder="0"
+				title="Test"
+				name="video-01"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen
+			></iframe>
+		</div>
+	</div>
+    <div>test</div>
+</div>

@@ -1,4 +1,4 @@
-<footer class="item-center flex flex-row justify-center bg-white dark:bg-gray-900">
+<footer class="mt-16 item-center flex flex-row justify-center bg-white dark:bg-gray-900">
 	<div class="">
 		<h2 class="mb-2 text-sm font-semibold text-gray-400 uppercase">About</h2>
 		<ul class="text-gray-900 uppercase dark:text-gray-200">

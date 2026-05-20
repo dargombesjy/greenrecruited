@@ -39,7 +39,7 @@
 		/>
 	{/if}
 
-	<div class="mt-8 mb-4 text-center text-2xl">{data.data[0].title}</div>
+	<div class="mt-8 mb-4 text-center text-2xl">{data.data[0].long_title}</div>
 	<div class="my-4 self-center text-xl">
 		<BlocksRenderer content={data.data[0].description} />
 	</div>
