@@ -13,12 +13,15 @@
 	{#each data.data as row}
 	<div class="flex justify-around px-10 py-4">
 		<div class="flex w-1/2 flex-col justify-center p-8 text-[28pt]">
-			<p class="text-center">SIMULASI REKRUTMEN</p>
+			<p class="text-center">
+				<!-- SIMULASI REKRUTMEN -->
+				{row.title}
+			</p>
 		</div>
 		<div class="flex w-1/2 flex-col items-center p-8">
 			<p class="text-center">
 				<!-- Organisasi berkelanjutan dimulai dari proses rekrutmen yang berkelanjutan pula -->
-				{row.title}
+				{row.long_title}
 			</p>
 			<button
 				onclick={() => gotoItem(row.name)}

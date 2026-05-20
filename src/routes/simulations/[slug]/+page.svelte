@@ -5,25 +5,28 @@
 	import { setContext } from 'svelte';
 
 	let { data } = $props();
-	// let choicepar = $state({
-	// 	next_node: ''
-	// });
-	let next_node = $state('');
-	let parent_node = $state('');
+	let choicepar = $state({
+		next_node: '',
+		recent_parent: '',
+		parent_node: data.data[0].name
+	});
+	// let next_node = $state('');
+	// let parent_node = $state('');
 
-	setContext('next_node', () => data.data[0].parent );
+	// setContext('next_node', () => data.data[0].parent );
 
 	const slugify = (str = '') => str.toLowerCase().replace(/ /g, '-').replace(/\./g, '');
-	function updateChoice(par) {
-		// choicepar.next_node = par;
-		next_node = par.next_node;
+	function updateChoice(par, upnode) {
+		choicepar.next_node = par;
+		choicepar.recent_parent = upnode;
 	}
 	function gotoChoice() {
-		// let dest = '/simulations/' + choicepar.next_node;
-		let dest = '/simulations/' + next_node;
+		let dest = '/simulations/' + choicepar.next_node;
+		if (choicepar.next_node == '') {
+			dest = '/simulations/' + choicepar.parent_node;
+		}
 		goto(dest);
-		// choicepar.next_node = 'cari_jalan_01';
-		// next_node = 'cari_jalan_01';
+		choicepar.next_node = '';
 	}
 </script>
 
@@ -45,15 +48,15 @@
 		{#each data.data[0].choices as path}
 			<div class="flex gap-2">
 				<input
-					onclick={() => updateChoice(path)}
+					onclick={() => updateChoice(path.next_node, data.data[0].name)}
 					id={slugify(path.choice_name)}
 					type="radio"
 					name="choices"
 					class="peer"
 				/>
-				<label for={slugify(path.choice_name)} class="peer-checked:bg-red-200"
-					>{path.choice_text}</label
-				>
+				<label for={slugify(path.choice_name)} class="peer-checked:bg-red-200">
+					{path.choice_text}
+				</label>
 			</div>
 		{/each}
 	</div>
@@ -61,7 +64,7 @@
 		class="mt-4 w-48 cursor-pointer self-center rounded-[20px] bg-primary-50 py-4 text-center text-white"
 		onclick={() => gotoChoice()}
 	>
-		{#if next_node == 'cari_jalan_01'}
+		{#if choicepar.next_node == ''}
 			Reset
 		{:else}
 			Submit
