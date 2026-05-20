@@ -1,1 +1,0 @@
-import{P as e}from"../chunks/BI8TNJbN.js";async function t({params:a}){return await(await fetch(`${e}/api/resource?populate[0]=videos.thumbnail&populate[1]=news.thumbnail&populate[2]=articles.thumbnail`)).json()}const s=Object.freeze(Object.defineProperty({__proto__:null,load:t},Symbol.toStringTag,{value:"Module"}));export{s as universal};
