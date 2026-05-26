@@ -10,10 +10,9 @@
 		recent_parent: '',
 		parent_node: data.data[0].name
 	});
-	// let next_node = $state('');
-	// let parent_node = $state('');
-
-	// setContext('next_node', () => data.data[0].parent );
+	let nextpar = $derived.by(() => {
+		return data.data[0].next_simulation;
+	});
 
 	const slugify = (str = '') => str.toLowerCase().replace(/ /g, '-').replace(/\./g, '');
 	function updateChoice(par, upnode) {
@@ -27,6 +26,13 @@
 		}
 		goto(dest);
 		choicepar.next_node = '';
+	}
+	function gotoSimulation(sim) {
+		let dest = '/simulations';
+		if (sim != 'reset') {
+			dest = dest + '/' + sim;
+		}
+		goto(dest);
 	}
 </script>
 
@@ -60,16 +66,26 @@
 			</div>
 		{/each}
 	</div>
-	<button
-		class="mt-4 w-48 cursor-pointer self-center rounded-[20px] bg-primary-50 py-4 text-center text-white"
-		onclick={() => gotoChoice()}
-	>
-		{#if choicepar.next_node == ''}
-			Reset
-		{:else}
-			Submit
-		{/if}
-	</button>
+
+	{#if choicepar.next_node}
+		<button
+			class="mt-4 w-48 cursor-pointer self-center rounded-[20px] bg-primary-50 py-4 text-center text-white"
+			onclick={() => gotoChoice()}
+			>Submit
+		</button>
+	{:else if nextpar}
+		<button
+			class="mt-4 w-48 cursor-pointer self-center rounded-[20px] bg-primary-50 py-4 text-center text-white"
+			onclick={() => gotoSimulation(nextpar)}
+			>Simulasi Berikutnya
+		</button>
+	{:else}
+		<button
+			class="mt-4 w-48 cursor-pointer self-center rounded-[20px] bg-primary-50 py-4 text-center text-white"
+			onclick={() => gotoSimulation('reset')}
+			>Reset
+		</button>
+	{/if}
 </div>
 
 <style>
