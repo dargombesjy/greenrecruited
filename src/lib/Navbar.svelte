@@ -2,7 +2,7 @@
 	<div class="relative w-full px-2 py-2.5 sm:px-4">
 		<div class="container mx-auto flex flex-wrap items-center justify-between">
 			<a href="/" class="flex items-center">
-				<img src="/images/logo.svg" class="me-3 h-6 sm:h-9" alt="Site Logo" />
+				<img src="/images/logo.jpg" class="me-3 h-6 sm:h-9" alt="Site Logo" />
 				<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
 					GreenRecruitED
 				</span>
@@ -34,7 +34,9 @@
 			</button>
 
 			<div class="hidden w-full md:block md:w-auto">
-				<ul class="list-none mt-0 flex flex-col p-4 md:flex-row md:text-base md:font-medium rtl:space-x-reverse bg-primary-50 rounded-4xl">
+				<ul
+					class="mt-0 flex list-none flex-col rounded-4xl bg-primary-50 p-4 md:flex-row md:text-base md:font-medium rtl:space-x-reverse"
+				>
 					<li>
 						<a
 							href="/about"
@@ -80,10 +82,10 @@
 					</li>
 				</ul>
 			</div>
-            
+
 			<div class="hidden w-full md:block md:w-auto">
 				<ul
-					class="list-none mt-0 flex flex-col p-4 md:flex-row md:text-sm md:font-medium rtl:space-x-reverse"
+					class="mt-0 flex list-none flex-col p-4 md:flex-row md:text-sm md:font-medium rtl:space-x-reverse"
 				>
 					<li>
 						<a
