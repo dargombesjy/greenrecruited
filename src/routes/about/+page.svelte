@@ -1,7 +1,13 @@
 <script>
+	import { goto } from '$app/navigation';
 	import { PUBLIC_STRAPI_URL } from '$env/static/public';
 	import Footer from '$lib/Footer.svelte';
 	let { data } = $props();
+
+	function gotoItem(par) {
+		let dest = '/about/' + par;
+		goto(dest);
+	}
 </script>
 
 <div></div>
@@ -21,7 +27,12 @@
 					<div class="h-1/3">
 						<span>{item.description}</span>
 					</div>
-					<button class="mx-10 mt-2 rounded-3xl bg-primary-50 p-2 text-white">{item.button_text}</button>
+					<button
+						class="mx-10 mt-2 cursor-pointer rounded-3xl bg-primary-50 p-2 text-white"
+						onclick={() => gotoItem(item.detail_node)}
+					>
+						{item.button_text}
+					</button>
 				</div>
 			</div>
 		{:else}
@@ -31,7 +42,12 @@
 					<div class="h-1/3">
 						<span>{item.description}</span>
 					</div>
-					<button class="mx-10 mt-2 rounded-3xl bg-primary-50 p-2 text-white">{item.button_text}</button>
+					<button
+						class="mx-10 mt-2 cursor-pointer rounded-3xl bg-primary-50 p-2 text-white"
+						onclick={() => gotoItem(item.detail_node)}
+					>
+						{item.button_text}
+					</button>
 				</div>
 				<div class="w-1/2">
 					<img class="h-96 object-fill" src="{PUBLIC_STRAPI_URL}{item.image.url}" alt="" />
